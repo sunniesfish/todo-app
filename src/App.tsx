@@ -1,14 +1,15 @@
 import { ThemeProvider } from "styled-components";
 import { Reset } from "./GlobalStyle";
 import { ReactQueryDevtools } from "react-query/devtools"
-import { Router } from "react-router-dom";
+import Router from "./Router";
+import { darkTheme } from "./theme";
 
 function App() {
   return (
     <>
-      <ThemeProvider theme={}>
+      <ThemeProvider theme={darkTheme}>
         <Reset/>
-        <Router/>
+        <Router />
         <ReactQueryDevtools/>
       </ThemeProvider>
     </>
