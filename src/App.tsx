@@ -1,7 +1,6 @@
-import { ThemeProvider } from "styled-components";
 import { Reset } from "./GlobalStyle";
-import { ReactQueryDevtools } from "react-query/devtools"
-import Router from "./Router";
+import ToDoList from "./ToDoList";
+import { ThemeProvider } from "styled-components";
 import { darkTheme } from "./theme";
 
 function App() {
@@ -9,8 +8,7 @@ function App() {
     <>
       <ThemeProvider theme={darkTheme}>
         <Reset/>
-        <Router />
-        <ReactQueryDevtools/>
+        <ToDoList/>
       </ThemeProvider>
     </>
   );
