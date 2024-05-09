@@ -40,6 +40,7 @@ footer, header, hgroup, main, menu, nav, section {
 body {
   line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: ${props => props.theme.bgColor};
 }
 menu, ol, ul {
   list-style: none;
