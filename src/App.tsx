@@ -1,5 +1,5 @@
 import { Reset } from "./GlobalStyle";
-import ToDoList from "./ToDoList";
+import ToDoList from "./components/ToDoList";
 import { ThemeProvider } from "styled-components";
 import { darkTheme } from "./theme";
 
