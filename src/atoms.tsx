@@ -4,17 +4,23 @@ let storage = localStorage.getItem("TODO");
 let toDoStorage = storage? JSON.parse(storage) : []
 
 export enum Categories {
-    "TO_DO" = "TO_DO",
-    "DOING" = "DOING",
-    "DONE" = "DONE",
+    "TO_DO" = "To Do",
+    "DOING" = "Doing",
+    "DONE" = "Done",
 }
 export interface IToDo {
     text:string;
     id:number;
-    category: Categories;
+    category: string;
 }
 
-export const categoryState =atom<Categories>({
+
+export const categoriesState = atom<string[]>({
+    key:"categories",
+    default:[Categories.TO_DO, Categories.DOING, Categories.DONE],
+})
+
+export const categoryState =atom<string>({
     key:"category",
     default:Categories.TO_DO
 })
