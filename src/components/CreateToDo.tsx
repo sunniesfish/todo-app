@@ -15,13 +15,13 @@ function CreateToDo(){
     const {handleSubmit, register, setValue} = useForm<IForm>();
     const inValid = ({toDo,category:cate}:IForm) => {
         setToDos((prev) => {
-            const tempCate = cate? cate : category;
+            const tempCate = cate.trim()? cate : category;
             const temp = [{text: toDo, id: Date.now(), category:tempCate},...prev,]
             console.log(temp);
             localStorage.setItem("TODO",JSON.stringify(temp))
             return temp;
         });
-        setCategories(prev=> prev.includes(cate)||!cate? prev : [...prev, cate]);
+        setCategories(prev=> prev.includes(cate.trim())||!cate.trim()? prev : [...prev, cate]);
         setValue("toDo", "");
         setValue("category","");
     }

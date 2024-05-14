@@ -1,5 +1,5 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { Categories, IToDo, categoriesState, toDoState } from "../atoms";
+import { IToDo, categoriesState, toDoState } from "../atoms";
 
 
 
@@ -16,12 +16,12 @@ function ToDo({text, category, id}:IToDo){
     }
     return (
         <li >
-            <span>{text}</span>
             <select value={category} onInput={onInput}>
                 {categories.filter(item => item !== category).map((item,index) => (
                     <option key={index} value={item}>{item}</option>
                 ))}
             </select>
+            <span>{text}</span>
         </li>
     );
 }
